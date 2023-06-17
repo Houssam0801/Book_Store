@@ -97,19 +97,24 @@ export default {
         genre: "",
         content: "",
         author: "",
+        editing: "",
       },
       toggle: false,
+      counter: this.myBooks.length,
     };
   },
 
   methods: {
     addBook() {
+      this.counter++;
       if (this.newBook.title != "" && this.newBook.content != "") {
         this.myPropCopy.push({
+          id: this.counter,
           title: this.newBook.title,
           genre: this.newBook.genre,
           content: this.newBook.content,
           author: this.newBook.author,
+          editing: this.newBook.editing,
         });
         this.newBook.title = "";
         this.newBook.genre = "";
